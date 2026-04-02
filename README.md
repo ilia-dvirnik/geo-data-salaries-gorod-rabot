@@ -13,6 +13,15 @@ The script:
 - stores downloaded HTML pages in a local cache
 - exports the final result to an Excel file
 
+## Use case
+
+This tool is designed for geoanalytics and market analysis workflows.
+
+It can be used to:
+- estimate salary levels across different cities
+- support location-based decision making
+- enrich datasets for analytical models
+
 ## Input file
 
 The script expects an Excel file with the following data:
@@ -21,11 +30,37 @@ The script expects an Excel file with the following data:
 - Gorod Rabot URL
 
 Example input columns:
-- `Населенный пункт`
-- `Регион РФ`
+- `Города`
+- `Субъект РФ`
 - `Город работ`
 
 The input file itself is not included in the repository.
+
+## Data coverage
+
+By default, the script collects data for:
+
+- 2025
+- current year (automatically)
+
+The year range can be adjusted in the code:
+
+START_YEAR = 2025  
+END_YEAR = datetime.now().year  
+
+You can modify these values to collect data for other periods.
+
+## Data sources
+
+The script uses publicly available data from Gorod Rabot.
+
+The input dataset (list of cities and URLs) is not included in the repository.
+
+## Limitations
+
+- The script depends on the current structure of the Gorod Rabot website.
+- If the website layout changes, parsing logic may require updates.
+- Large-scale data collection should be performed with reasonable request intervals.
 
 ## Output file
 
